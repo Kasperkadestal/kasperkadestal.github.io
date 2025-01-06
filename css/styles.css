@@ -93,7 +93,7 @@
 
 .fade-in {
   opacity: 0; /* Start invisible */
-  transition: opacity 1s ease-in-out; /* Smooth fade-in over 1 second */
+  transition: opacity 1.5s ease-in-out; /* Smooth fade-in over 1 second */
 }
 
 .fade-in.show {

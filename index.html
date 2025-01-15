@@ -35,6 +35,16 @@
         fadeElements.forEach((el) => observer.observe(el));
       });
     </script>
+
+    <style>
+      .resize {
+        object-fit: contain;
+        object-position: center; /* Center the image within the element */
+        width: 100%;
+        height: 180px;
+        margin-bottom: -20px;
+      }
+    </style>
   </head>
   <body>
     <!-- Header-->
@@ -44,7 +54,7 @@
           <div class="m-4 m-lg-5">
             <div class="p-4 m-auto">
               <img
-                src="assets/logo/ssAsset 4.svg"
+                src="assets/logo/dinAsset 4.svg"
                 class="p-4 resize"
                 alt="..."
               />
@@ -187,9 +197,7 @@
     <!-- Footer-->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">
-          
-        </p>
+        <p class="m-0 text-center text-white"></p>
       </div>
     </footer>
   </body>

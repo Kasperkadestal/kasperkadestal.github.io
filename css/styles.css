@@ -91,6 +91,14 @@
   }
 }
 
+.resize {
+  object-fit: contain;
+  object-position: center; /* Center the image within the element */
+  width: 100%;
+  height: 180px;
+  margin-bottom: -20px;
+}
+
 .fade-in {
   opacity: 0; /* Start invisible */
   transition: opacity 1.5s ease-in-out; /* Smooth fade-in over 1 second */

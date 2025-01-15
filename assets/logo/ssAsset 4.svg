@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 217.14 80.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3953a4;
+        font-family: Bahnschrift-Bold, Bahnschrift;
+        font-size: 67.63px;
+        font-variation-settings: 'wght' 700, 'wdth' 100;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        letter-spacing: .1em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        font-family: Chivo-Thin, Chivo;
+        font-size: 11.15px;
+        font-weight: 200;
+      }
+
+      .cls-5 {
+        letter-spacing: .07em;
+      }
+
+      .cls-6 {
+        letter-spacing: .1em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-9 {
+        letter-spacing: .09em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="6.61" y1="60.12" x2="82.22" y2="16.47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#202e68"/>
+      <stop offset=".07" stop-color="#243472"/>
+      <stop offset=".25" stop-color="#2e4288"/>
+      <stop offset=".45" stop-color="#344c97"/>
+      <stop offset=".68" stop-color="#3852a1"/>
+      <stop offset="1" stop-color="#3a54a4"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <text class="cls-1" transform="translate(85.28 57.83)"><tspan class="cls-7" x="0" y="0">D</tspan><tspan class="cls-3" x="43.18" y="0">IN</tspan></text>
+      <text class="cls-4" transform="translate(93.79 74.17)"><tspan class="cls-2" x="0" y="0">TR</tspan><tspan class="cls-5" x="16.15" y="0">A</tspan><tspan class="cls-6" x="24.2" y="0">VEL GR</tspan><tspan class="cls-9" x="67.95" y="0">O</tspan><tspan class="cls-6" x="76.7" y="0">UP</tspan></text>
+      <path class="cls-8" d="M66.56,1.7H12.35C5.53,1.7,0,7.23,0,14.05v33.23c.91,7.31,10.24,10.43,15.62,5.55,6.91-6.98,13.82-13.97,20.73-20.95.15-.18.22-.38.14-.52-.01-.03-.03-.06-.07-.08-4.53-2.77-9.06-5.53-13.58-8.3l3.35-3.36c5.48,1.79,10.96,3.57,16.44,5.36.06.01.17.03.3,0,.18-.05.29-.16.33-.21,2-2.18,4.01-4.35,6.01-6.53.06-.07,1.44-1.57,3.36-1.18,1.07.21,2.13.97,2.5,2.07.06.17.36,1.08-.03,2.02-.08.18-.16.32-.23.42-2.3,2.28-4.6,4.56-6.91,6.83-.15.1-.6.44-.69,1.02-.02.13-.02.24,0,.35,1.73,5.38,3.46,10.76,5.2,16.15l-3.35,3.34-8.3-13.58c-.47-.27-1.01.55-1.35.9-5.39,5.52-12.16,11.85-16.95,17.71-8.79,10.76-1.73,25.08,11.29,26.32h32.75c6.82,0,12.35-5.53,12.35-12.35V14.05c0-6.82-5.53-12.35-12.35-12.35Z"/>
+    </g>
+  </g>
+</svg>

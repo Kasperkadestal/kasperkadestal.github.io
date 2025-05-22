@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Upptäck unika, skräddarsydda resor med DIN Travel Group. Boka din drömresa idag och upplev personlig service i världsklass!"
+    />
+    <meta
+      name="keywords"
+      content="skräddarsydda resor, unika reseupplevelser, personlig service, researrangör, gruppresor, företagsresor, kvalitetsresor, boka resa, DIN Travel Group, premiumresor"
+    />
+
+    <meta name="author" content="DIN Travel Group" />
+
+    <title>DIN Travel Group</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Välkommen till DIN Travel Group - Upptäck världen med oss</title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Stop observing once it's visible
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+          }
+        );
+
+        fadeElements.forEach((el) => observer.observe(el));
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("scroll-down")
+          .addEventListener("click", function () {
+            window.scrollBy({
+              top: window.innerHeight,
+              left: 0,
+              behavior: "smooth",
+            });
+          });
+        let vid = document.getElementById("myVideo");
+        vid.playbackRate = 0.7;
+      });
+    </script>
+
+    <style>
+      .resize {
+        object-fit: contain;
+        object-position: center; /* Center the image within the element */
+        width: 100%;
+        height: 180px;
+        margin-bottom: -20px;
+      }
+
+      .resizetb {
+        height: 60%;
+      }
+
+      body {
+        font-family: "Montserrat";
+      }
+
+      .w700 {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: 0.3rem;
+      }
+
+      .bg-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Soft black overlay */
+        z-index: 1;
+      }
+
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 85%;
+        height: 85%;
+        margin: auto;
+        display: flex;
+        flex-direction: row; /* CHANGED */
+        justify-content: space-between;
+        align-items: stretch; /* ensure full height columns */
+        gap: 2rem;
+      }
+
+      .align-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: white;
+        text-align: left;
+        align-items: end;
+        width: 38dvw;
+      }
+
+      .left-column {
+        flex-direction: column;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      @media only screen and (max-width: 1400px) {
+        .align-bottom {
+          display: none;
+        }
+        .content-wrapper {
+          align-content: center;
+          height: 100%;
+        }
+        .left-column {
+          flex-direction: column;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        .some {
+          display: none;
+        }
+        .content-wrapper {
+          align-content: center;
+          height: 100%;
+        }
+        .left-column {
+          flex-direction: column;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header-->
+    <header
+      style="height: 100dvh; width: 100%; display: flex; flex-direction: column"
+    >
+      <div
+        style="
+          width: 85%;
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+          height: 15dvh;
+          align-items: center;
+        "
+      >
+        <img src="assets/logo/dinAsset 4.svg" class="resizetb" alt="..." />
+        <div
+          style="height: 60%; align-content: end; justify-content: end"
+          class="some"
+        >
+          <div style="display: flex; flex-direction: row; height: 50%">
+            <svg
+              fill="rgba(20, 72, 127, 1)"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h7.621v-6.961h-2.343v-2.725h2.343V9.309 c0-2.324,1.421-3.591,3.495-3.591c0.699-0.002,1.397,0.034,2.092,0.105v2.43h-1.428c-1.13,0-1.35,0.534-1.35,1.322v1.735h2.7 l-0.351,2.725h-2.365V21H19c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z"
+              ></path>
+            </svg>
+            <svg
+              fill="rgba(20, 72, 127, 1)"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z"
+              ></path>
+            </svg>
+            <svg
+              fill="rgba(20, 72, 127, 1)"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-primary"
+        style="flex: 1; position: relative; overflow: hidden; height: 100%"
+      >
+        <!-- Background video/image -->
+        <video autoplay muted loop playsinline class="bg-media" id="myVideo">
+          <source src="assets\image\65560-515098344.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Black overlay -->
+        <div class="bg-overlay"></div>
+
+        <!-- Foreground content -->
+        <div class="m-auto content-wrapper">
+          <!-- Left Column -->
+          <div class="left-column">
+            <svg width="5em" height="2em" xmlns="http://www.w3.org/2000/svg">
+              <rect
+                width="5em"
+                height="0.6em"
+                x="0"
+                y="0"
+                style="fill: rgb(255, 255, 255)"
+              />
+            </svg>
+            <h1 class="w700" style="color: white; font-size: 3.2em">
+              YOUR<br />TRAVEL<br />BEGINS<br />WITH<br />US!
+            </h1>
+            <div
+              id="scroll-down"
+              style="cursor: pointer; display: inline-block; margin-top: 1rem"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                fill="white"
+                class="bi bi-arrow-down-circle mt-4"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="align-bottom">
+            <h2
+              class="fw-normal lh-base mt-0"
+              style="
+                background-color: rgba(15, 40, 73, 0.6);
+                padding: 2rem;
+                margin-bottom: 0;
+                font-size: 0.85rem;
+              "
+            >
+              DIN Travel Group är en ledande aktör inom resebranschen, där vi
+              samlar flera framstående varumärken under ett gemensamt namn. Vi
+              skapar unika, skräddarsydda reseupplevelser för privatpersoner,
+              föreningar och företag, alltid med personlig service och högsta
+              kvalitet i fokus.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Page Content-->
+    <section id="companies">
+      <div class="container px-lg-5" style="min-height: 100dvh">
+        <!-- Page Features-->
+        <div class="row gx-lg-5">
+          <div class="col-lg-6 col-xxl-4">
+            <div class="h-100 fade-in">
+              <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                <img
+                  src="assets/logo/HEREWEGOSPORTRESOR_POS.png"
+                  class="p-4 resize"
+                  alt="..."
+                />
+                <h2 class="fs-4">Here We Go</h2>
+                <p class="mb-0">
+                  Med 25 års erfarenhet erbjuder vi välkomponerade sportresor
+                  och träningsresor över hela Europa.
+                </p>
+                <a href="https://www.herewego.se" target="_blank">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary mt-4 w-75"
+                  >
+                    Besök
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xxl-4">
+            <div class="border-0 h-100 fade-in">
+              <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                <img src="assets/logo/fct.svg" class="p-4 resize" alt="..." />
+                <h2 class="fs-4">First Class Travel</h2>
+                <p class="mb-0">
+                  First Class Travel betyder kvalitet och standard. Vi
+                  skräddarsyr drömresor över hela världen.
+                </p>
+                <a href="https://www.firstclasstravel.se" target="_blank">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary mt-4 w-75"
+                  >
+                    Besök
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xxl-4">
+            <div class="border-0 h-100 fade-in">
+              <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                <img
+                  src="assets/logo/Poseidon Cruises logo_cmyk.svg"
+                  class="p-4 resize"
+                  alt="..."
+                />
+                <h2 class="fs-4">Poseidon Cruises</h2>
+                <p class="mb-0">
+                  Vi är specialister på marina resor sedan 1979 och är sedan en
+                  tid tillbaka en del av First Class Travel.
+                </p>
+                <a href="https://www.poseidoncruises.se" target="_blank">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary mt-4 w-75"
+                  >
+                    Besök
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xxl-4">
+            <div class="border-0 h-100 fade-in">
+              <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                <img
+                  src="assets/logo/logo (5).png"
+                  class="p-4 resize"
+                  alt="..."
+                />
+                <h2 class="fs-4">Equi Tours</h2>
+                <p class="mb-0">
+                  EquiTours är Nordens största leverantör av Hästsportsresor och
+                  upplevelser inom hästvärlden.
+                </p>
+                <a href="https://www.equitours.se" target="_blank">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary mt-4 w-75"
+                  >
+                    Besök
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xxl-4">
+            <div class="border-0 h-100 fade-in">
+              <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                <img
+                  src="assets/logo/PTH_POS_GULD_POS.png"
+                  class="p-4 resize"
+                  alt="..."
+                />
+                <h2 class="fs-4">Palm Tree Hotel</h2>
+                <p class="mb-0">
+                  Ett modernt aktivitetshotell i centrala Trelleborg med bra
+                  shopping och andra nöjen.
+                </p>
+                <a href="https://www.palmtreehotel.se" target="_blank">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary mt-4 w-75"
+                  >
+                    Besök
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xxl-4">
+            <div class="border-0 h-100 fade-in">
+              <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                <img
+                  src="assets/logo/GruppResa_Logo.png"
+                  class="p-4 resize"
+                  alt="..."
+                />
+                <h2 class="fs-4">Gruppresa.se</h2>
+                <p class="mb-0">
+                  Hos oss hittar du allt du behöver för att planera och boka den
+                  perfekta gruppresan.
+                </p>
+                <a href="https://www.gruppresa.se" target="_blank">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary mt-4 w-75"
+                  >
+                    Besök
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="SEO">
+      <hr class="m-auto p-4" style="width: 85%" />
+      <div
+        class="pb-1 rounded-3 m-auto px-4"
+        style="width: 85%; padding-top: 2rem; padding-bottom: 2rem"
+      >
+        <div class="">
+          <h3 class="opacity-75">Vad står DIN för?</h3>
+          <p class="opacity-75">
+            DIN står för Discover International Network - och det är precis vad
+            vi gör. Genom våra varumärken och samarbeten över hela världen
+            skapar vi minnesvärda upplevelser, anpassade efter varje kunds behov
+            och önskemål.
+          </p>
+        </div>
+        <div class="pt-4">
+          <h3 class="opacity-75">Vår expertis</h3>
+          <p class="opacity-75">
+            Med lång erfarenhet och en passion för resor erbjuder vi: Gruppresor
+            - Skräddarsydda paket för företag, föreningar, skolor och privata
+            sällskap. Affärsresor - Smidiga lösningar för företag med fokus på
+            komfort. Privatresor - Skräddarsydda resor för dig som vill uppleva
+            världen på ditt sätt. Skräddarsydda upplevelser - Exklusiva resor
+            anpassade efter individuella önskemål. Hotell & flygbokningar -
+            Trygga och flexibla lösningar för alla typer av resor.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer
+      class="py-5"
+      style="margin-top: 4em; background-color: rgba(15, 40, 73, 1)"
+    >
+      <div
+        class="container px-4"
+        style="
+          display: flex;
+          width: 85%;
+          margin: auto;
+          flex-direction: column;
+        "
+      >
+        <b><p class="m-0 pb-4 text-white">DIN Travel Group</p></b>
+        <p class="m-0 pb-2 text-white">Modemgatan 6, 235 39, Vellinge</p>
+        <p class="m-0 text-white">Telefon: 010 3301420</p>
+      </div>
+    </footer>
+  </body>
+</html>

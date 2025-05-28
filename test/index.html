@@ -66,6 +66,117 @@
           });
         let vid = document.getElementById("myVideo");
         vid.playbackRate = 0.7;
+
+        showSlides(1);
+      });
+
+      let slideIndex = 1;
+      let slideInterval;
+
+      const logos = [
+        "/assets/partner/mcdonalds.png",
+        "/assets/partner/Bmw.png",
+        "/assets/partner/Malmo_Redhawks_Logo.svg.png",
+        "/assets/partner/Chelsea_FC.svg.png",
+        "/assets/partner/Crystal_Palace_FC_logo_(2022).svg.png",
+        "/assets/partner/Espresso_House_logo.svg.png",
+        "/assets/partner/Juventus_FC_-_logo_black_(Italy,_2020).png",
+        "/assets/partner/Malmo_FF_logo.svg.png",
+        "/assets/partner/NIVEA_logo_2021.svg.png",
+        "/assets/partner/Nottingham_Forest_F.C._logo.svg.png",
+        "/assets/partner/svenska-handelsbanken-ser-a--600.png",
+        "/assets/partner/kalmarff_2023_emblem.png",
+      ];
+
+      function calculateLogosPerSlide() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth >= 1200) return 4;
+        if (screenWidth >= 868) return 3;
+        if (screenWidth >= 480) return 2;
+        return 1;
+      }
+
+      function chunkArray(arr, chunkSize) {
+        let chunks = [];
+        for (let i = 0; i < arr.length; i += chunkSize) {
+          chunks.push(arr.slice(i, i + chunkSize));
+        }
+        return chunks;
+      }
+
+      function renderSlides() {
+        const container = document.querySelector(".containerSlides");
+        if (!container) return;
+
+        container.innerHTML = "";
+
+        const logosPerSlide = calculateLogosPerSlide();
+        const slides = chunkArray(logos, logosPerSlide);
+
+        slides.forEach((group) => {
+          const slide = document.createElement("div");
+          slide.className = "mySlides";
+          slide.style.height = "100%";
+          slide.style.display = "flex";
+          slide.style.justifyContent = "center";
+          slide.style.alignItems = "center";
+          slide.style.gap = "40px";
+
+          group.forEach((src) => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.style.height = "50%";
+            img.style.objectFit = "contain";
+            slide.appendChild(img);
+          });
+
+          container.appendChild(slide);
+        });
+
+        slideIndex = 1;
+        showSlides(slideIndex);
+        resetSlideShow();
+      }
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+        resetSlideShow();
+      }
+
+      function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          slides[i].classList.remove("fade-in-slide"); // Remove old animation class
+        }
+
+        const currentSlide = slides[slideIndex - 1];
+        if (currentSlide) {
+          currentSlide.style.display = "flex";
+          void currentSlide.offsetWidth; // Force reflow to restart animation
+          currentSlide.classList.add("fade-in-slide");
+        }
+      }
+
+      function startSlideShow() {
+        slideInterval = setInterval(() => {
+          plusSlides(1);
+        }, 4000); // 4 seconds
+      }
+
+      function resetSlideShow() {
+        clearInterval(slideInterval);
+        startSlideShow();
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderSlides();
+        window.addEventListener("resize", renderSlides);
       });
     </script>
 
@@ -73,8 +184,8 @@
       .resize {
         object-fit: contain;
         object-position: center; /* Center the image within the element */
-        width: 100%;
-        height: 180px;
+        width: 90%;
+        max-height: 130px;
         margin-bottom: -20px;
       }
 
@@ -158,6 +269,12 @@
         }
       }
 
+      @media only screen and (max-width: 1000px) {
+        .images-footer {
+          display: none;
+        }
+      }
+
       @media only screen and (max-width: 500px) {
         .some {
           display: none;
@@ -172,10 +289,110 @@
           justify-content: center;
         }
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Position the image container (needed to position the left and right arrows) */
+      .containerSlides {
+        position: relative;
+      }
+
+      /* Hide the images by default */
+      .mySlides {
+        display: none;
+        height: 100%;
+      }
+
+      /* Add a pointer when hovering over the thumbnail images */
+      .cursor {
+        cursor: pointer;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        z-index: 2; /* <- Important to make them visible above slides */
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* Container for image text */
+      .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .active,
+      .demo:hover {
+        opacity: 1;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .fade-in-slide {
+        animation: fadeIn 0.6s ease-in-out;
+      }
     </style>
   </head>
   <body>
-    <!-- Header-->
     <header
       style="height: 100dvh; width: 100%; display: flex; flex-direction: column"
     >
@@ -306,7 +523,6 @@
         </div>
       </div>
     </header>
-    <!-- Page Content-->
     <section id="companies">
       <div class="container px-lg-5" style="min-height: 100dvh">
         <!-- Page Features-->
@@ -319,7 +535,7 @@
                   class="p-4 resize"
                   alt="..."
                 />
-                <h2 class="fs-4">Here We Go</h2>
+                <h3 class="fs-4">Here We Go</h3>
                 <p class="mb-0">
                   Med 25 års erfarenhet erbjuder vi välkomponerade sportresor
                   och träningsresor över hela Europa.
@@ -338,8 +554,12 @@
           <div class="col-lg-6 col-xxl-4">
             <div class="border-0 h-100 fade-in">
               <div class="text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                <img src="/assets/logo/fct.svg" class="p-4 resize" alt="..." />
-                <h2 class="fs-4">First Class Travel</h2>
+                <img
+                  src="/assets/logo/dinAsset 2.png"
+                  class="p-4 resize"
+                  alt="..."
+                />
+                <h3 class="fs-4">First Class Travel</h3>
                 <p class="mb-0">
                   First Class Travel betyder kvalitet och standard. Vi
                   skräddarsyr drömresor över hela världen.
@@ -363,7 +583,7 @@
                   class="p-4 resize"
                   alt="..."
                 />
-                <h2 class="fs-4">Poseidon Cruises</h2>
+                <h3 class="fs-4">Poseidon Cruises</h3>
                 <p class="mb-0">
                   Vi är specialister på marina resor sedan 1979 och är sedan en
                   tid tillbaka en del av First Class Travel.
@@ -387,7 +607,7 @@
                   class="p-4 resize"
                   alt="..."
                 />
-                <h2 class="fs-4">Equi Tours</h2>
+                <h3 class="fs-4">Equi Tours</h3>
                 <p class="mb-0">
                   EquiTours är Nordens största leverantör av Hästsportsresor och
                   upplevelser inom hästvärlden.
@@ -412,7 +632,7 @@
                   class="p-4 resize"
                   alt="..."
                 />
-                <h2 class="fs-4">Palm Tree Hotel</h2>
+                <h3 class="fs-4">Palm Tree Hotel</h3>
                 <p class="mb-0">
                   Ett modernt aktivitetshotell i centrala Trelleborg med bra
                   shopping och andra nöjen.
@@ -436,7 +656,7 @@
                   class="p-4 resize"
                   alt="..."
                 />
-                <h2 class="fs-4">Gruppresa.se</h2>
+                <h3 class="fs-4">Gruppresa.se</h3>
                 <p class="mb-0">
                   Hos oss hittar du allt du behöver för att planera och boka den
                   perfekta gruppresan.
@@ -455,14 +675,47 @@
         </div>
       </div>
     </section>
+    <hr />
+    <section
+      id="carousel"
+      style="max-height: 50dvh; height: 50dvh; position: relative"
+    >
+      <div
+        class="px-4"
+        style="
+          height: 10dvh;
+          width: 85%;
+          display: flex;
+          align-items: center;
+          margin: auto;
+        "
+      >
+        <h3 class="fs-4 opacity-75" style="font-weight: bold">
+          Samarbetspartners
+        </h3>
+      </div>
+      <div
+        class="containerSlides"
+        style="
+          width: 100%;
+          height: 40dvh;
+          background-color: rgba(20, 72, 127, 1);
+        "
+      >
+        <!-- Slides will be inserted here by JS -->
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
     <section id="SEO">
-      <hr class="m-auto p-4" style="width: 85%" />
       <div
         class="pb-1 rounded-3 m-auto px-4"
-        style="width: 85%; padding-top: 2rem; padding-bottom: 2rem"
+        style="width: 85%; padding-top: 6rem; padding-bottom: 2rem"
       >
         <div class="">
-          <h3 class="opacity-75">Vad står DIN för?</h3>
+          <h3 class="fs-4 opacity-75" style="font-weight: bold">
+            Vad står DIN för?
+          </h3>
           <p class="opacity-75">
             DIN står för Discover International Network - och det är precis vad
             vi gör. Genom våra varumärken och samarbeten över hela världen
@@ -471,7 +724,9 @@
           </p>
         </div>
         <div class="pt-4">
-          <h3 class="opacity-75">Vår expertis</h3>
+          <h3 class="fs-4 opacity-75" style="font-weight: bold">
+            Vår expertis
+          </h3>
           <p class="opacity-75">
             Med lång erfarenhet och en passion för resor erbjuder vi: Gruppresor
             - Skräddarsydda paket för företag, föreningar, skolor och privata
@@ -484,23 +739,75 @@
         </div>
       </div>
     </section>
-    <!-- Footer-->
     <footer
       class="py-5"
-      style="margin-top: 4em; background-color: rgba(15, 40, 73, 1)"
+      style="
+        margin-top: 4em;
+        background-color: rgba(15, 40, 73, 1);
+        width: 100%;
+      "
     >
       <div
-        class="container px-4"
         style="
           display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
           width: 85%;
           margin: auto;
-          flex-direction: column;
+          flex-wrap: wrap;
         "
       >
-        <b><p class="m-0 pb-4 text-white">DIN Travel Group</p></b>
-        <p class="m-0 pb-2 text-white">Modemgatan 6, 235 39, Vellinge</p>
-        <p class="m-0 text-white">Telefon: 010 3301420</p>
+        <!-- Text column -->
+        <div class="px-4" style="width: 40%">
+          <b><p class="m-0 pb-4 text-white">DIN Travel Group</p></b>
+          <br />
+          <p class="m-0 pb-2 text-white">Modemgatan 6, 235 39, Vellinge</p>
+          <p class="m-0 text-white">Telefon: 010 3301420</p>
+        </div>
+
+        <!-- Images column in two rows -->
+        <div style="width: 60%" class="images-footer">
+          <div
+            style="
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              margin-bottom: 0.5rem;
+            "
+          >
+            <!-- First image on its own row -->
+            <img
+              src="/assets/footer/Banner_Betalnigar_800x74.png"
+              alt=""
+              style="height: 50px; object-fit: contain"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: flex-end;
+              gap: 1rem;
+              padding-top: 1rem;
+            "
+          >
+            <!-- Next three images on second row -->
+            <img
+              src="/assets/footer/iata_liten.png"
+              alt=""
+              style="height: 50px; object-fit: contain"
+            />
+            <img
+              src="/assets/footer/srf_logotop.png"
+              alt=""
+              style="height: 50px; object-fit: contain"
+            />
+            <img
+              src="/assets/footer/iagto-logo-300.png"
+              alt=""
+              style="height: 50px; object-fit: contain"
+            />
+          </div>
+        </div>
       </div>
     </footer>
   </body>
